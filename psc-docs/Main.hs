@@ -89,7 +89,6 @@ docgen (PSCDocsOptions fmt input output) =
               forM_ ms $ \(m, fp) -> do
                 createDirectoryIfMissing True (takeDirectory fp)
                 writeFile fp (D.renderModulesAsMarkdown [m])
-
   where
   guardMissing [] = return ()
   guardMissing [mn] = do
